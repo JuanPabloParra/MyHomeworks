@@ -8,7 +8,7 @@ const HelloWorld = () => <h1 style={{ color: 'green', fontSize: '36px' }}>Hello 
 const App = () => {
   return (
     <div style={{ textAlign: 'center', color: 'green', fontSize: '24px' }}>
-      <HelloWorld />
+      <span> HelloWorld </span> 
     </div>
   );
 };
