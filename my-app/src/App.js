@@ -3,12 +3,14 @@ import './App.css';
 
 import React from 'react';
 
-function App() {
+const HelloWorld = () => <h1 style={{ color: 'green', fontSize: '36px' }}>Hello World</h1>;
+
+const App = () => {
   return (
-    <div>
-      Hello World
+    <div style={{ textAlign: 'center', color: 'green', fontSize: '24px' }}>
+      <HelloWorld />
     </div>
   );
-}
+};
 
 export default App;
