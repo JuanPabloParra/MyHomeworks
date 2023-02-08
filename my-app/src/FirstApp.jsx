@@ -2,24 +2,34 @@ import PropTypes from 'prop-types';
 import { useState} from "react"
 
 
+function FirstApp() {
+  const [count, setCount] = useState(0);
 
-const FirstApp = ({ value}) => {
-    const [counter, setCounter] = useState (value)
+  const handleAdd = () => {
+    setCount(count + 1);
+  };
 
-    const handleAdd=() =>{
-        setCounter(counter +1 )
-    }
-    return(
-        <>
-          <h1> Counter</h1>
-          <span> { counter}</span>
-          <button onClick={() => handleAdd() } > +1 </button>
-        
-        </>
-    )
+  const handleSubstract = () => {
+    setCount(count - 1);
+  };
+
+  const handleReset = () => {
+    setCount(0);
+  };
+
+  return (
+    <div>
+      <h1>Count: {count}</h1>
+      <button onClick={handleAdd}>Add</button>
+      <button onClick={handleSubstract}>Substract</button>
+      <button onClick={handleReset}>Reset</button>
+    </div>
+  );
 }
 
-export default FirstApp
+export default FirstApp;
+
+
 
 //FirstApp.propTypes ={
 //    title: PropTypes.string.isRequired,
