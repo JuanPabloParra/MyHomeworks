@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState} from "react"
+import React from 'react';
 
 
 function FirstApp() {
@@ -20,17 +21,14 @@ function FirstApp() {
   return (
     <div>
       <h1>Count: {count}</h1>
-      <button onClick={handleAdd}>Add</button>
-      <button onClick={handleSubstract}>Substract</button>
+      <button onClick={handleAdd}>Añadiendo</button>
+      <button onClick={handleSubstract}>Restando</button>
       <button onClick={handleReset}>Reset</button>
     </div>
   );
 }
 
 export default FirstApp;
-
-
-
 //FirstApp.propTypes ={
 //    title: PropTypes.string.isRequired,
 //    sum: PropTypes.number.isRequired
