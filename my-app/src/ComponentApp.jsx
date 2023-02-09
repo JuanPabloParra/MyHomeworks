@@ -2,7 +2,7 @@ const categories = ['first category' , 'second category']
 export const ComponentApp = () =>{
     return(
       <>
-        <h1>GifExpert</h1>
+        <h1>ARREGLOS</h1>
         <ol>
             {
                 categories.map(
