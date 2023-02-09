@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState} from "react"
 import React from 'react';
+import {categories} from './ComponentApp';
 
 
 function FirstApp() {
@@ -15,15 +16,21 @@ function FirstApp() {
   };
 
   const handleReset = () => {
-    setCount(0);
+    setCount(5);
   };
 
   return (
     <div>
       <h1>Count: {count}</h1>
-      <button onClick={handleAdd}>Añadiendo</button>
-      <button onClick={handleSubstract}>Restando</button>
+      <button onClick={handleAdd}>+1</button>
+      <button onClick={handleSubstract}>-1</button>
       <button onClick={handleReset}>Reset</button>
+      <h1> arreglos</h1>
+      <ol>
+        {
+          
+        }
+      </ol>
     </div>
   );
 }
