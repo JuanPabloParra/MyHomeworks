@@ -44,7 +44,7 @@ const FirstApp = () => {
       <button onClick={handleReset}>Reset</button>
       <br />
       <input type="text" value= {category} onChange={handleInput} />
-      <button onClick={handleAddCategory}> Add Category </button>
+      <button onClick={handleAddCategory}> AÑADIR CATEGORIAS </button>
       <ul>
         {categories.map((cat, index) => (
           <li key ={index}> {cat} </li>
