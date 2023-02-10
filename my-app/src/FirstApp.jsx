@@ -4,36 +4,34 @@ import React from 'react';
 import {categories} from './ComponentApp';
 
 
-function FirstApp() {
-  const [count, setCount] = useState(0);
-
-  const handleAdd = () => {
-    setCount(count + 1);
-  };
+const FirstApp = () => {
+  const [counter, setCounter] = useState(0);
+  const [text, setText] = useState('');
 
   const handleSubstract = () => {
-    setCount(count - 1);
+    setCounter(counter - 1);
   };
 
   const handleReset = () => {
-    setCount(5);
+    setCounter(0);
+  };
+
+  const handleInput = (event) => {
+    setText(event.target.value);
   };
 
   return (
     <div>
-      <h1>Count: {count}</h1>
-      <button onClick={handleAdd}>+1</button>
+      <h1>Counter: {counter}</h1>
       <button onClick={handleSubstract}>-1</button>
       <button onClick={handleReset}>Reset</button>
-      <h1> arreglos</h1>
-      <ol>
-        {
-          
-        }
-      </ol>
+      <br />
+      <br />
+      <input type="text" value={text} onChange={handleInput} />
+      <p>{text}</p>
     </div>
   );
-}
+};
 
 export default FirstApp;
 //FirstApp.propTypes ={
