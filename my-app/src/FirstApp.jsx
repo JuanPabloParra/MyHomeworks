@@ -36,6 +36,10 @@ const FirstApp = () => {
 
   }
 
+  const handleClear = () => {
+    setCategory('');
+  };
+
   return (
     <div>
       <h1>Counter: {counter}</h1>
@@ -43,21 +47,21 @@ const FirstApp = () => {
       <button onClick={handleSubstract}>Substract</button>
       <button onClick={handleReset}>Reset</button>
       <br />
-      <input type="text" value= {category} onChange={handleInput} />
-      <button onClick={handleAddCategory}> AÑADIR CATEGORIAS </button>
+      <input
+        type="text"
+        value={category}
+        onChange={handleInput}
+      />
+      <button onClick={handleAddCategory}>Agregar categoría</button>
+      <button onClick={handleClear}>Limpiar</button>
       <ul>
-        {categories.map((cat, index) => (
-          <li key ={index}> {cat} </li>
-
+        {categories.map((category, index) => (
+          <li key={index}>{category}</li>
         ))}
       </ul>
-      
-      <div>
-      
-    </div>
     </div>
   );
-};
+}
 
 export default FirstApp;
 
