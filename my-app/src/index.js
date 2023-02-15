@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component, useState, } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -6,12 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import FirstApp from './FirstApp';
 import {ComponentApp} from './ComponentApp';
 import { GifExpertApp } from './GiftExpertApp';
+import {useEffect}  from './GifGrid';
+
+ 
  
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    
+
     
     <GifExpertApp />,
   document.getElementById('root')
