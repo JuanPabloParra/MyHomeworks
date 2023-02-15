@@ -12,9 +12,13 @@ import { GifExpertApp } from './GiftExpertApp';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GifExpertApp></GifExpertApp>
+    
+    <GifExpertApp />,
+  document.getElementById('root')
+ 
     <ComponentApp></ComponentApp>
     <FirstApp value ={0}/>
+    
   </React.StrictMode>
 );
 
