@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import FirstApp from './FirstApp';
 import {ComponentApp} from './ComponentApp';
-
-export default App;
+import { GifExpertApp } from './GiftExpertApp';
+ 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <GifExpertApp></GifExpertApp>
     <ComponentApp></ComponentApp>
     <FirstApp value ={0}/>
   </React.StrictMode>

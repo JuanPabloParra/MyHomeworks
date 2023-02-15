@@ -4,56 +4,41 @@ import React from 'react';
 import {categories} from './ComponentApp';
 
  
-
-
-
-
-
-const FirstApp = () => {
-  const [counter, setCounter] = useState(0);
+const ChildComponent = ({ addCategory, getGifs }) => {
   const [category, setCategory] = useState('');
-  const [categories, setCategories] = useState([]);
-
-  const handleAdd = () => {
-    setCounter(counter + 1);
-  };
-
-  const handleSubstract = () => {
-    setCounter(counter - 1);
-  };
-
-  const handleReset = () => {
-    setCounter(0);
-  };
 
   const handleInput = (event) => {
     setCategory(event.target.value);
   };
 
-  const handleAddCategory = () => {
-    setCategories([...categories, category]);
-    setCategory("");
-
-  }
-
-  const handleClear = () => {
+  const handleAddCategory = async () => {
+    addCategory(category);
     setCategory('');
+    await getGifs(category);
   };
 
   return (
     <div>
-      <h1>Counter: {counter}</h1>
-      <button onClick={handleAdd}>Add</button>
-      <button onClick={handleSubstract}>Substract</button>
-      <button onClick={handleReset}>Reset</button>
-      <br />
-      <input
-        type="text"
-        value={category}
-        onChange={handleInput}
-      />
+      <input type="text" value={category} onChange={handleInput} />
       <button onClick={handleAddCategory}>Agregar categoría</button>
-      <button onClick={handleClear}>Limpiar</button>
+    </div>
+  );
+};
+
+const FirstApp = () => {
+  const [categories, setCategories] = useState([]);
+
+  const addCategory = (category) => {
+    setCategories([...categories, category]);
+  };
+
+  const getGifs = async (category) => {
+    // Aquí iría la lógica para obtener los gifs
+  };
+
+  return (
+    <div>
+      <ChildComponent addCategory={addCategory} getGifs={getGifs} />
       <ul>
         {categories.map((category, index) => (
           <li key={index}>{category}</li>
@@ -61,9 +46,19 @@ const FirstApp = () => {
       </ul>
     </div>
   );
-}
+};
 
 export default FirstApp;
+
+  
+  
+  
+  
+
+
+
+
+
 
 //FirstApp.propTypes ={
 //    title: PropTypes.string.isRequired,
