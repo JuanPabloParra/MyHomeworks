@@ -1,5 +1,10 @@
+import { useEffect } from "react"
+
 export const GifGrid =({category}) => {
-    console.log(category)
+    useEffect(() => {
+        console.log( category );
+    }, [])
+    
 
     return(
         <>
