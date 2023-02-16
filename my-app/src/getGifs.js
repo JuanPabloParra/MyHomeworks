@@ -1,5 +1,5 @@
 
-const API_KEY = 'your_api_key_here';
+const API_KEY = '1sfsJkqT6idZzEhvcKF7PuPBI7ngu7Ch';
 
 export const getGifs = async (searchTerm) => {
   const url = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&limit=10&api_key=${API_KEY}`;
