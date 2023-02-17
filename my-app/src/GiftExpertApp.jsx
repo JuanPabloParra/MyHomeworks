@@ -4,7 +4,7 @@ import { AddCategory } from "./AddCategory";
 import  useEffect from "react";
 
 export const GifExpertApp = () => {
-    const [categories, setCategories] = useState(['Zodiac'])
+    const [categories, setCategories] = useState([''])
 
     const onAddCategory = ( category ) => {
         setCategories( list => [...list, category])
