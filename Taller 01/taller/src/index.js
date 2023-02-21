@@ -6,6 +6,7 @@ import Saludo from "./Saludo";
 import NumeroIgual from "./NumeroIgual";
 import OrdenarNumeros from "./OrdenarNumeros";
 import NumerosImpares from "./NumerosImpares";
+import AumentoSalarios from "./AumentoSalarios";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -17,7 +18,9 @@ root.render(
     <NumeroIgual />
     <OrdenarNumeros />
     <NumerosImpares />
-  </React.StrictMode>
+    <AumentoSalarios />
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 
