@@ -28,10 +28,14 @@ const Saludo = () => {
     }
     return mensaje;
   };
-// El componente devuelve un contenedor que incluye dos campos de entrada para que el usuario introduzca su nombre y la hora en formato de 24 horas, respectivamente. También incluye un contenedor para mostrar el mensaje de saludo generado por la función getMensaje.
+// El componente devuelve un contenedor que incluye dos campos de entrada para que el usuario introduzca
+// su nombre y la hora en formato de 24 horas, respectivamente. También incluye un contenedor para mostrar
+// el mensaje de saludo generado por la función getMensaje.
   return (
     <div className="saludo-container">
       <div className="input-container">
+        <h1>Punto 3:</h1>
+        
         <label htmlFor="nombre-input">Nombre:</label>
         <input type="text" id="nombre-input" value={nombre} onChange={onNombreChange} />
       </div>

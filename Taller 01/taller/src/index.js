@@ -4,6 +4,8 @@ import App from "./App";
 import LlamadaTelefonica from "./LlamadaTelefonica";
 import Saludo from "./Saludo";
 import NumeroIgual from "./NumeroIgual";
+import OrdenarNumeros from "./OrdenarNumeros";
+import NumerosImpares from "./NumerosImpares";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -13,8 +15,11 @@ root.render(
     <LlamadaTelefonica />
     <Saludo />
     <NumeroIgual />
+    <OrdenarNumeros />
+    <NumerosImpares />
   </React.StrictMode>
 );
+
 
 
 

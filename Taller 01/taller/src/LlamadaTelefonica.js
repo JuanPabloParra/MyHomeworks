@@ -16,7 +16,8 @@ const LlamadaTelefonica = () => {
 
   return (
     <div>
-      <h1>Calculadora de llamadas telefónicas</h1>
+        <h1> Punto 2:</h1>
+      <h2>Calculadora de llamadas telefónicas</h2>
       <div>
         <label htmlFor="duracion-llamada">Duración de la llamada (minutos): </label>
         <input
@@ -28,7 +29,7 @@ const LlamadaTelefonica = () => {
       </div>
       <button onClick={calcularCostoLlamada}>Calcular costo de la llamada</button>
       <div>
-        <h2>Costo de la llamada: {costoLlamada} pesos</h2>
+        <h3>Costo de la llamada: {costoLlamada} pesos</h3>
       </div>
     </div>
   );
