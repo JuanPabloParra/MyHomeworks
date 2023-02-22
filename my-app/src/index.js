@@ -1,34 +1,18 @@
-import React, { Component, useState, } from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+// index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import FirstApp from './FirstApp';
-import {ComponentApp} from './ComponentApp';
 import { GifExpertApp } from './GiftExpertApp';
-import {useEffect}  from './GifGrid';
+import MyComponent from './MyComponent';
 
- 
- 
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    
-
-    
-    <GifExpertApp />,
+    <GifExpertApp />
+    <App />
+    <MyComponent />
+  </React.StrictMode>,
   document.getElementById('root')
- 
-    <ComponentApp></ComponentApp>
-    <FirstApp value ={0}/>
-    
-  </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
 
