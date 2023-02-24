@@ -1,16 +1,22 @@
-// MyComponent.js
-
-import { useCounter } from './useCounter';
+import React, { useState } from 'react';
+import useFetch from './useFetch';
 
 const MyComponent = () => {
-  const { count, increment, decrement, reset } = useCounter(0);
+  const [counter, setCounter] = useState(1);
+  const { data, isLoading } = useFetch(`https://api.breakingbadquotes.xyz/v1/quotes/1${counter}`);
+
+  const handleButtonClick = () => {
+    setCounter(prevCounter => prevCounter + 1);
+  };
 
   return (
     <div>
-      <p>Count: {count}</p>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={reset}>Reset</button>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <blockquote>{data?.[0]?.quote}</blockquote>
+      )}
+      <button onClick={handleButtonClick}>Next quote</button>
     </div>
   );
 };
