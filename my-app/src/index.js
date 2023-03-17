@@ -4,14 +4,14 @@ import App from './App';
 import { GifExpertApp } from './GiftExpertApp';
 import MyComponent from './MyComponent';
 import QuoteComponent from './QuoteComponent';
-import TodoList from './TodoList';
+import  TodoApp  from './TodoApp';
 ReactDOM.render(
   <React.StrictMode>
     <GifExpertApp />
     <App />
     <MyComponent />
     <QuoteComponent />
-    <TodoList />
+    <TodoApp/>
   </React.StrictMode>,
   document.getElementById('root')
 );
