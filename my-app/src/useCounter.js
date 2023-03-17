@@ -1,19 +1,37 @@
-// useCounter.js
+import React from "react";
 
- // Define un nuevo custom hook llamado useCounter que recibe un valor 
-//inicial como parámetro (default: 0)
-// Utiliza el hook useState para definir un nuevo estado count, que
-// se inicializa con el valor recibido por parámetro
-import { useState } from 'react';
+function FollowHeader() {
+  return <h2>Followers</h2>;
+}
 
-const useCounter = (initialCount) => {
-  const [count, setCount] = useState(initialCount);
+function FollowList({ followers }) {
+  return (
+    <ul>
+      {followers.map((follower) => (
+        <li key={follower.id}>{follower.name}</li>
+      ))}
+    </ul>
+  );
+}
 
-  const increment = () => {
-    setCount(count + 1);
-  };
+function FollowFooter() {
+  return <p>End of Followers</p>;
+}
 
-  return [count, increment];
-};
+function Follow() {
+  const followers = [
+    { id: 1, name: "John" },
+    { id: 2, name: "Jane" },
+    { id: 3, name: "Peter" },
+  ];
 
-export default useCounter;
+  return (
+    <div>
+      <FollowHeader />
+      <FollowList followers={followers} />
+      <FollowFooter />
+    </div>
+  );
+}
+
+export default Follow;
