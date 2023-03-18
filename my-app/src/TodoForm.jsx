@@ -1,18 +1,24 @@
-import { useState } from "react";
+import React from 'react'
 
-export const TodoForm = ({ addTodo }) => {
-  const [todoText, setTodoText] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addTodo(todoText);
-    setTodoText("");
-  };
-
+const TodoForm = ({ handleInputChange, handleFormSubmit, newTodo }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={todoText} onChange={(e) => setTodoText(e.target.value)} />
-      <button type="submit">Add Todo</button>
+    <form onSubmit={handleFormSubmit}>
+      <input 
+        type="text" 
+        className="form-control" 
+        placeholder="Nueva tarea..."
+        value={newTodo}
+        onChange={handleInputChange}
+      />
+      <button 
+        type="submit" 
+        className="btn btn-primary mt-2"
+        disabled={newTodo.trim().length === 0}
+      >
+        Agregar
+      </button>
     </form>
-  );
-};
+  )
+}
+
+export default TodoForm

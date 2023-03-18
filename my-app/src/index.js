@@ -4,9 +4,10 @@ import App from './App';
 import { GifExpertApp } from './GiftExpertApp';
 import MyComponent from './MyComponent';
 import QuoteComponent from './QuoteComponent';
-import  TodoApp  from './TodoApp';
+import TodoApp from './TodoApp';
 ReactDOM.render(
   <React.StrictMode>
+    
     <GifExpertApp />
     <App />
     <MyComponent />
