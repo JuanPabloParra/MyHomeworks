@@ -1,32 +1,31 @@
-import React, {createContext, useContext, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export const UserContext = createContext({ user: null, setUser: () => {} });
+export const UserContext = createContext({
+  user: null,
+  login: () => {},
+  logout: () => {},
+});
 
-export const LoginPage = () => {
-  const { user, setUser } = useContext(UserContext);
+export const UserProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  const onLogin = () => {
-    setUser({
-      id: 313,
-      name: 'Jonathan Lopez',
-      email: 'jlopez0313@hotmail.com'
-    });
+  const login = (userData) => {
+    setUser(userData);
+    localStorage.setItem("lastPath", window.location.pathname);
+    navigate("/");
+  };
 
-    const lastPath = localStorage.getItem('lastPath') || '/';
-    navigate(lastPath, {
-      replace: true
-    });
+  const logout = () => {
+    setUser(null);
+    navigate("/login");
   };
 
   return (
-    <>
-      <div>Login Page</div>
-      <pre>{JSON.stringify(user, null, 3)}</pre>
-      <button className='btn btn-primary' onClick={() => onLogin()}>
-        Login
-      </button>
-    </>
+    <UserContext.Provider value={{ user, login, logout }}>
+      {children}
+    </UserContext.Provider>
   );
 };
+

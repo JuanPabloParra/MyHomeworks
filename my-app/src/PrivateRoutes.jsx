@@ -1,11 +1,13 @@
-import React, {useContext} from "react";
-import { useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { Navigate, Route } from "react-router-dom";
 import { UserContext } from "./UserContext";
 
+export const PrivateRoute = ({ path, ...props }) => {
+  const { user } = useContext(UserContext);
 
-export const PrivateRoutes= ({children}) =>{
-    const {user}= useContext(UserContext)
-    const {pathname, search}= useLocation();
-    localStorage.setItem('lastPath', `${pathname}${search}`)
-    return user ? children : <> Error 403</>
-}
+  return user ? (
+    <Route {...props} path={path} />
+  ) : (
+    <Navigate to="/login" replace={true} />
+  );
+};

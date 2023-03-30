@@ -1,43 +1,47 @@
-import React, {useContext} from 'react';
-import { useNavigate } from 'react-router-dom';
-import { UserContext } from './UserContext';
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "./UserContext";
 
 export const LoginPage = () => {
-
-  const{user, setUser} = useContext (UserContext);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { login } = useContext(UserContext);
   const navigate = useNavigate();
-  
-  const onLogin =() => {
-    setUser({
-      id: 313,
-      name: 'Jonathan Lopez',
-      email: 'jlopez0313@hotmail.com'
-    })
 
-    const lasPath = localStorage.getItem('lastPath') || '/';
-    navigate(lasPath, {
-      replace: true
-    })
+  const handleLogin = (e) => {
+    e.preventDefault();
+    login({
+      email: email,
+      password: password,
+    });
+    navigate("/home");
+  };
 
-  
-}
-return (
-  <>
-  <div> Login Page </div>
-    <pre>
-      {JSON.stringify(user, null, 3)}
-    </pre>
-
-    <button
-    className='btn btn-primary'
-    onClick={ () => onLogin()}
-    >
-      Login
-    </button>
-  
-  
-  </>
-    
-      
+  return (
+    <>
+      <div>Login Page</div>
+      <form onSubmit={handleLogin}>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </>
   );
 };
+
