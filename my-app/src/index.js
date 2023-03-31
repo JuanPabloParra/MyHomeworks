@@ -7,21 +7,17 @@ import QuoteComponent from './QuoteComponent';
 import TodoApp from './TodoApp';
 import { BrowserRouter } from 'react-router-dom';
 import {MainApp} from './MainApp';
-import { Provider } from 'react';
-import {store} from './store';
+import { createRoot } from 'react-dom/client';
 
- 
-ReactDOM.render(
+createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-    <App />
-    <Registro />
-  </BrowserRouter>,
+      <App />
+    </BrowserRouter>
     <GifExpertApp />
-     <MyComponent />
+    <MyComponent />
     <QuoteComponent />
     <TodoApp/>
     <MainApp />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
