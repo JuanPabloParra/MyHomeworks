@@ -1,5 +1,3 @@
-
-
 import React, { useContext, useState } from "react";
 import { UserContext } from "./UserContext";
 export const HomePage = () => {
@@ -7,7 +5,7 @@ export const HomePage = () => {
 
   return (
     <>
-      <div>Welcome, {currentUser.username}!</div>
+      <div>Welcome, {currentUser && currentUser.username}!</div>
     </>
   );
 };
