@@ -5,14 +5,14 @@ import { UserContext } from "./UserContext";
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    login({
+    setUser({
+      name: "Jonathan Lopez",
       email: email,
-      password: password,
     });
     navigate("/home");
   };
@@ -45,3 +45,12 @@ export const LoginPage = () => {
   );
 };
 
+export const HomePage = () => {
+  const { user } = useContext(UserContext);
+
+  return (
+    <>
+      <div>Welcome, {user.name}!</div>
+    </>
+  );
+};

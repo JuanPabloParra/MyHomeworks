@@ -1,10 +1,13 @@
-import React from 'react';
 
+
+import React, { useContext, useState } from "react";
+import { UserContext } from "./UserContext";
 export const HomePage = () => {
+  const { currentUser } = useContext(UserContext);
+
   return (
-    <div>
-      <h2>Home Page</h2>
-      <p>Welcome to the home page!</p>
-    </div>
+    <>
+      <div>Welcome, {currentUser.username}!</div>
+    </>
   );
 };

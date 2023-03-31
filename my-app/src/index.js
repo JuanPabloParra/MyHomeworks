@@ -7,11 +7,15 @@ import QuoteComponent from './QuoteComponent';
 import TodoApp from './TodoApp';
 import { BrowserRouter } from 'react-router-dom';
 import {MainApp} from './MainApp';
+import { Provider } from 'react';
+import {store} from './store';
+
  
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
     <App />
+    <Registro />
   </BrowserRouter>,
     <GifExpertApp />
      <MyComponent />
